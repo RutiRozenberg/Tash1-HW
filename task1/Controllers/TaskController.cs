@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
 using System.Text.Json;
-
+using task1.Interface;
 namespace Task.Controllers{
 
 using TaskService.Services;
@@ -18,6 +18,11 @@ using TaskService.Services;
 [Route("[controller]")]
 public class TaskController : ControllerBase
 {
+    ITaskInterface TaskService;
+    public TaskController(ITaskInterface TaskService)
+    {
+        this.TaskService=TaskService;
+    }
     [HttpGet]
     public ActionResult<List<MyTasks>> Get()
     {
@@ -46,6 +51,17 @@ public class TaskController : ControllerBase
     public ActionResult Put(int id,MyTasks newTask)
     {
         var result = TaskService.Update(id, newTask);
+        if (!result)
+        {
+            return BadRequest();
+        }
+        return NoContent();
+    }
+    
+    [HttpDelete("{id}")]
+    public ActionResult Delete(int id)
+    {
+        var result = TaskService.Delete(id);
         if (!result)
         {
             return BadRequest();

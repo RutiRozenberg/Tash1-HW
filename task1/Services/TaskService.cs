@@ -1,54 +1,64 @@
 // using UnityEngine;
 using System.Collections.Generic;
 using MyTask.Models;
+using task1.Interface;
+using System.Collections;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using System.IO;
+using System;
+using System.Text.Json;
 namespace TaskService.Services{
 using System.Collections;
+using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using System.IO;
+using System;
+using System.Text.Json;
 
 
-public static class TaskService
+public  class TaskService:ITaskInterface
 {
-    private static List<MyTasks> Tasks;
-
-    static TaskService()
+    private List<MyTasks> Tasks;
+    private string fileName = "Tasks.json";
+    public TaskService()
     {
-        Tasks = new List<MyTasks>
+        this.fileName = Path.Combine(/*webHost.ContentRootPath,*/ "Data", "Tasks.json");
+        using (var jsonFile = File.OpenText(fileName))
         {
-            new MyTasks {Name = "Homework", Id = 2,  isDone=false},
-            new MyTasks {Name = "Shopping", Id = 1,  isDone=false},
-            new MyTasks {Name = "Cooking", Id = 4,  isDone=false},
-            
-          
-        };
+            Tasks = JsonSerializer.Deserialize<List<MyTasks>>(jsonFile.ReadToEnd(),
+            new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+        }
     }
 
-    public static List<MyTasks> GetAll() => Tasks;
+    private void saveToFile()
+    {
+        File.WriteAllText(fileName, JsonSerializer.Serialize(Tasks));
+    }
+    public  List<MyTasks> GetAll() => Tasks;
 
     
-    public static MyTasks GetById(int id) 
+    public  MyTasks GetById(int id) 
     {
         return Tasks.FirstOrDefault(t => t.Id == id);
     }
 
-    public static int Add(MyTasks newTask)
+    public  int Add(MyTasks newTask)
     {
         if (Tasks.Count == 0)
-
-            {
-                newTask.Id = 1;
-            }
-            else
-            {
-        newTask.Id =  Tasks.Max(t => t.Id) + 1;
-
-            }
+            newTask.Id = 1;
+        else
+            newTask.Id =  Tasks.Max(t => t.Id) + 1;
 
         Tasks.Add(newTask);
-
+        saveToFile();
         return newTask.Id;
     }
   
-    public static bool Update(int id, MyTasks newTask)
+    public  bool Update(int id, MyTasks newTask)
     {
         if (id != newTask.Id)
             return false;
@@ -62,12 +72,13 @@ public static class TaskService
             return false;
 
         Tasks[index] = newTask;
+        saveToFile();
 
         return true;
     }  
 
       
-    public static bool Delete(int id)
+    public bool Delete(int id)
     {
         var existingTask = GetById(id);
         if (existingTask == null )
@@ -78,10 +89,14 @@ public static class TaskService
             return false;
 
         Tasks.RemoveAt(index);
+        saveToFile();
+
         return true;
-    }  
+    } 
 
-
+    public int Count => Tasks.Count();
 
 }
+
+
 }

@@ -230,11 +230,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\B\\רוזנברג רות\\core\\task1\\Task.csproj",
+      "projectUniqueName": "Z:\\B\\רוזנברג רות\\core\\task2\\Task1-HW\\task1\\Task.csproj",
       "projectName": "Task",
-      "projectPath": "Z:\\B\\רוזנברג רות\\core\\task1\\Task.csproj",
+      "projectPath": "Z:\\B\\רוזנברג רות\\core\\task2\\Task1-HW\\task1\\Task.csproj",
       "packagesPath": "C:\\Users\\huser\\.nuget\\packages\\",
-      "outputPath": "Z:\\B\\רוזנברג רות\\core\\task1\\obj\\",
+      "outputPath": "Z:\\B\\רוזנברג רות\\core\\task2\\Task1-HW\\task1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
