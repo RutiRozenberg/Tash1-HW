@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/N0QNjwzNEBSGblTicCZYBZL7Ge+DxS7wxoRAVurpe0=",
+  "Hash": "iW55y7UZwVErdPthEbSFNrEkRB9LNRX38qJdk4UxAEU=",
   "Source": "Task",
   "BasePath": "_content/Task",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Task\\wwwroot",
       "Source": "Task",
-      "ContentRoot": "Z:\\B\\רוזנברג רות\\core\\task2\\TAsk1-HW\\task1\\wwwroot\\",
+      "ContentRoot": "Z:\\B\\רוזנברג רות\\core\\task3\\Task1-HW\\task1\\wwwroot\\",
       "BasePath": "_content/Task",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "Z:\\B\\רוזנברג רות\\core\\task2\\TAsk1-HW\\task1\\wwwroot\\css\\site.css",
+      "Identity": "Z:\\B\\רוזנברג רות\\core\\task3\\Task1-HW\\task1\\wwwroot\\css\\site.css",
       "SourceId": "Task",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\B\\רוזנברג רות\\core\\task2\\TAsk1-HW\\task1\\wwwroot\\",
+      "ContentRoot": "Z:\\B\\רוזנברג רות\\core\\task3\\Task1-HW\\task1\\wwwroot\\",
       "BasePath": "_content/Task",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "Z:\\B\\רוזנברג רות\\core\\task2\\TAsk1-HW\\task1\\wwwroot\\index.html",
+      "Identity": "Z:\\B\\רוזנברג רות\\core\\task3\\Task1-HW\\task1\\wwwroot\\index.html",
       "SourceId": "Task",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\B\\רוזנברג רות\\core\\task2\\TAsk1-HW\\task1\\wwwroot\\",
+      "ContentRoot": "Z:\\B\\רוזנברג רות\\core\\task3\\Task1-HW\\task1\\wwwroot\\",
       "BasePath": "_content/Task",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "Z:\\B\\רוזנברג רות\\core\\task2\\TAsk1-HW\\task1\\wwwroot\\js\\site.js",
+      "Identity": "Z:\\B\\רוזנברג רות\\core\\task3\\Task1-HW\\task1\\wwwroot\\js\\site.js",
       "SourceId": "Task",
       "SourceType": "Discovered",
-      "ContentRoot": "Z:\\B\\רוזנברג רות\\core\\task2\\TAsk1-HW\\task1\\wwwroot\\",
+      "ContentRoot": "Z:\\B\\רוזנברג רות\\core\\task3\\Task1-HW\\task1\\wwwroot\\",
       "BasePath": "_content/Task",
       "RelativePath": "js/site.js",
       "AssetKind": "All",

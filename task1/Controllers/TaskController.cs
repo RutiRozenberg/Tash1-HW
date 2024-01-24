@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
 using System.Text.Json;
 using task1.Interface;
-namespace Task.Controllers{
+namespace TaskControllers{
 
 using TaskService.Services;
 
