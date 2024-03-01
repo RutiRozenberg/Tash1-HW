@@ -1,1 +1,17 @@
-[{"Name":"shopping \uD83D\uDED2","Id":1,"isDone":false},{"Name":"homeWork \uD83D\uDCD6","Id":2,"isDone":false}]
+[
+    {
+        "Name": "shopping \uD83D\uDED2",
+        "Id": 1,
+        "isDone": false
+    },
+    {
+        "Name": "homeWork \uD83D\uDCD6",
+        "Id": 2,
+        "isDone": false
+    },
+    {
+        "Name": "core project \uD83D\uDCBB",
+        "Id": 3,
+        "isDone": false
+    }
+]
