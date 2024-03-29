@@ -1,33 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\B\\רוזנברג רות\\core\\שעורי בית\\task3\\Task1-HW\\task1\\Task.csproj": {}
+    "C:\\Users\\This User\\Documents\\רותי\\תכנות\\תכנות יד\\core\\task3\\Task1-HW\\task1\\Task.csproj": {}
   },
   "projects": {
-    "Z:\\B\\רוזנברג רות\\core\\שעורי בית\\task3\\Task1-HW\\task1\\Task.csproj": {
+    "C:\\Users\\This User\\Documents\\רותי\\תכנות\\תכנות יד\\core\\task3\\Task1-HW\\task1\\Task.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\B\\רוזנברג רות\\core\\שעורי בית\\task3\\Task1-HW\\task1\\Task.csproj",
+        "projectUniqueName": "C:\\Users\\This User\\Documents\\רותי\\תכנות\\תכנות יד\\core\\task3\\Task1-HW\\task1\\Task.csproj",
         "projectName": "Task",
-        "projectPath": "Z:\\B\\רוזנברג רות\\core\\שעורי בית\\task3\\Task1-HW\\task1\\Task.csproj",
-        "packagesPath": "C:\\Users\\huser\\.nuget\\packages\\",
-        "outputPath": "Z:\\B\\רוזנברג רות\\core\\שעורי בית\\task3\\Task1-HW\\task1\\obj\\",
+        "projectPath": "C:\\Users\\This User\\Documents\\רותי\\תכנות\\תכנות יד\\core\\task3\\Task1-HW\\task1\\Task.csproj",
+        "packagesPath": "C:\\Users\\This User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\This User\\Documents\\רותי\\תכנות\\תכנות יד\\core\\task3\\Task1-HW\\task1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\huser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\This User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -46,6 +46,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.9.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -70,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.418\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

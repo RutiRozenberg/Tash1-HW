@@ -5,7 +5,7 @@ namespace task1.Interface
 {
     public interface ITaskInterface
     {
-        List<MyTasks> GetAll();
+        List<MyTasks> GetAll(int id);
     
         MyTasks GetById(int id);
     

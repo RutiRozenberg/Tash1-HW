@@ -9,6 +9,7 @@ public class MyTasks
     public string Name {get; set;}
     public int Id {get; set;}
     public bool isDone {get; set;}
+    public int UserId { get; set; }
 
 }
 

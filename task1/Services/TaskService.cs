@@ -1,4 +1,7 @@
 // using UnityEngine;
+
+
+
 using System.Collections.Generic;
 using MyTask.Models;
 using task1.Interface;
@@ -8,22 +11,23 @@ using System.Linq;
 using System.IO;
 using System;
 using System.Text.Json;
+using System.Runtime.CompilerServices;
 namespace TaskService.Services{
-using System.Collections;
-using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using System.IO;
-using System;
-using System.Text.Json;
+// using System.Collections;
+// using Microsoft.AspNetCore.Mvc;
+// using System.Linq;
+// using System.IO;
+// using System;
+// using System.Text.Json;
 
 
 public  class TaskService:ITaskInterface
 {
     private List<MyTasks> Tasks;
-    private string fileName = "Tasks.json";
+    private string fileName;
     public TaskService()
     {
-        this.fileName = Path.Combine(/*webHost.ContentRootPath,*/ "Data", "Tasks.json");
+        this.fileName = Path.Combine("Data", "Tasks.json");
         using (var jsonFile = File.OpenText(fileName))
         {
             Tasks = JsonSerializer.Deserialize<List<MyTasks>>(jsonFile.ReadToEnd(),
@@ -38,7 +42,12 @@ public  class TaskService:ITaskInterface
     {
         File.WriteAllText(fileName, JsonSerializer.Serialize(Tasks));
     }
-    public  List<MyTasks> GetAll() => Tasks;
+
+   
+    public  List<MyTasks> GetAll(int id)
+    {
+        return Tasks.Where(t=> t.UserId==id).ToList();
+    }
 
     
     public  MyTasks GetById(int id) 
@@ -51,23 +60,21 @@ public  class TaskService:ITaskInterface
         if (Tasks.Count == 0)
             newTask.Id = 1;
         else
-            newTask.Id =  Tasks.Max(t => t.Id) + 1;
-
+            newTask.Id = Tasks.Max(t => t.Id) + 1;
         Tasks.Add(newTask);
         saveToFile();
         return newTask.Id;
     }
   
-    public  bool Update(int id, MyTasks newTask)
+    public bool Update(int id, MyTasks newTask)
     {
         if (id != newTask.Id)
             return false;
-
         var existingTask = GetById(id);
         if (existingTask == null )
             return false;
 
-        var index = Tasks.IndexOf(existingTask);
+        int index = Tasks.IndexOf(existingTask);
         if (index == -1 )
             return false;
 
@@ -84,7 +91,7 @@ public  class TaskService:ITaskInterface
         if (existingTask == null )
             return false;
 
-        var index = Tasks.IndexOf(existingTask);
+        int index = Tasks.IndexOf(existingTask);
         if (index == -1 )
             return false;
 

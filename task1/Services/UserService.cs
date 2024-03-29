@@ -9,12 +9,12 @@ using System.IO;
 using System;
 using System.Text.Json;
 namespace UserService.Services{
-using System.Collections;
-using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using System.IO;
-using System;
-using System.Text.Json;
+// using System.Collections;
+// using Microsoft.AspNetCore.Mvc;
+// using System.Linq;
+// using System.IO;
+// using System;
+// using System.Text.Json;
 using User.Models;
 
     public  class UserService: IUserInterface
@@ -23,7 +23,7 @@ using User.Models;
     private string fileName = "User.json";
     public UserService()
     {
-        this.fileName = Path.Combine(/*webHost.ContentRootPath,*/ "Data", "User.json");
+        this.fileName = Path.Combine("Data", fileName);
         using (var jsonFile = File.OpenText(fileName))
         {
             Users = JsonSerializer.Deserialize<List<Users>>(jsonFile.ReadToEnd(),
