@@ -1,8 +1,9 @@
 
 const url = '/login';
+
 ExistValidToken()
 
-function Login() {
+async function Login() {
     localStorage.clear();
     var header = new Headers();
     const name = document.getElementById('name').value.trim();
@@ -37,9 +38,7 @@ function Login() {
 }
 
 
-
 function ExistValidToken(){
-    const exist=true
 
     var myHeaders = headerWithtoken()
     var requestOptions = {
@@ -48,7 +47,6 @@ function ExistValidToken(){
         redirect: 'follow'
     };
 
-        
     fetch( '/Task', requestOptions)
         .then(response=>response.json())
         .then(data=> {
