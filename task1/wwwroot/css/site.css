@@ -17,12 +17,62 @@ table {
     border-collapse: collapse;
 }
 
+
 th {
-    background-color: #f8f8f8;
     padding: 5px;
+    background-color: rgb(255, 239, 219);
 }
 
 td {
     border: 1px solid;
     padding: 5px;
 }
+
+td button{
+    background-color: rgb(255, 239, 219);
+    border:   rgb(0, 100, 154)  solid 1px;
+    border-radius: 3px;
+    padding: 2px 5px ;
+    color:rgb(0, 100, 154) ;
+}
+
+h1 {
+    color:rgb(0, 100, 154) ;
+}
+.black-button{
+    background-color:rgb(0, 100, 154) ;
+    color: white;
+    padding: 10px 20px ;
+    border-radius: 50px ;
+    border: none;
+}
+
+header{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    background-color: rgb(255, 239, 219);
+}
+
+#title-name{
+    color:rgb(0, 100, 154) ;
+    font-weight: 600;
+    font-size: large;
+}
+
+.button-update{
+    margin: 20px;
+}
+
+
+.light-button{
+    background-color: rgb(255, 239, 219);
+    border:   rgb(0, 100, 154)  solid 1px;
+    border-radius: 3px;
+    padding: 2px 5px ;
+    color:rgb(0, 100, 154) ;
+
+}
+

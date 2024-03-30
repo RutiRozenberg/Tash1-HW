@@ -3,7 +3,6 @@ let tasks = [];
 
 
 linkToUsers()
-showUserName()
 
 const addNameTextbox = document.getElementById('add-name');
 
@@ -55,14 +54,12 @@ function _displayItems(data,id) {
     const tBody = document.getElementById(id);
     tBody.innerHTML = '';
 
-    console.log("data ", data)
     _displayCount(data.length);
 
 
     const button = document.createElement('button');
 
     data.forEach(item => {
-        console.log(item);
         let isDoneCheckbox = document.createElement('input');
         isDoneCheckbox.type = 'checkbox';
         isDoneCheckbox.disabled = true;
@@ -174,31 +171,5 @@ function updateThisUser(){
         location.href="index.html";
         console.error('Unable to update item.', error)
     });   
-}
-
-function showUserName(){
-    const h1Name = document.getElementById('h1-name');
-    var myHeaders = headerWithtoken()
-    
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-    }; 
-
-    fetch( `user/Get`, requestOptions)
-        .then(response => response.json())
-        .then(data =>h1Name.innerHTML+=' '+data.name)
-        .catch(error => {
-            console.log('Unable to get items.', error)
-        });
-} 
-
-
-
-
-function signOut(){
-    localStorage.setItem("token","")
-    location.href="index.html" 
 }
 

@@ -2,6 +2,8 @@
 
 const token=localStorage.getItem("token")
 
+showUserName()
+
 function headerWithtoken()
 {
     var myHeaders = new Headers();
@@ -23,7 +25,7 @@ function getItems(url,type) {
         .then(response => response.json())
         .then(data => _displayItems(data,type))
         .catch(error => {
-            // location.href="index.html";
+                location.href="index.html";
             console.log('Unable to get items.', error)
         });
 }
@@ -93,7 +95,6 @@ function updateItem(url,type,itemId , item) {
 }
 
 function writeDetailsinInputs(item , formId){
-    console.log("update:::   ",item);
     document.getElementById('edit-name-user').value = item.name;
     document.getElementById('edit-id-user').value = item.id;
     try{
@@ -106,6 +107,29 @@ function writeDetailsinInputs(item , formId){
     document.getElementById(formId).style.display = 'block';
 }
 
+
+function showUserName(){
+    const h1Name = document.getElementById('title-name');
+    var myHeaders = headerWithtoken()
+    
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    }; 
+
+    fetch( `user/Get`, requestOptions)
+        .then(response => response.json())
+        .then(data =>h1Name.innerHTML+=' '+data.name)
+        .catch(error => {
+            console.log('Unable to get items.', error)
+        });
+} 
+
+function signOut(){
+    localStorage.setItem("token","")
+    location.href="index.html" 
+}
 
 
 

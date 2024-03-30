@@ -1,10 +1,6 @@
 const uri = '/user'
 let users = []
 
-
-getItems(uri,'Users')
-
-
 const addNameTextbox = document.getElementById('add-name');
 const addPasswordTextbox = document.getElementById('add-password');
 

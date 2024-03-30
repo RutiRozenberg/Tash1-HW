@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <title>Todo list</title>
     <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <h1 id="h1-name">hello </h1>
-    <button id="sign-out" onclick="signOut()">sign out</button>
-    <h2>Your Tasks </h2>
+    <header>
+        <div id="title-name">hello </div>
+        <button id="sign-out" class="black-button" onclick="signOut()">sign out</button>
+    </header>
+    <h1>Your Tasks </h1>
     <h3>Add</h3>
     <form action="javascript:void(0);" method="POST" onsubmit="addTask()">
         <input type="text" id="add-name" placeholder="New Task">
-        <input type="submit" value="Add">
+        <input type="submit" value="Add" class="light-button">
     </form>
 
     <div id="editForm">
@@ -23,8 +26,8 @@
             <input type="hidden" id="edit-id">
             <input type="checkbox" id="edit-isDone">
             <input type="text" id="edit-name">
-            <input type="submit" value="Save">
-            <a onclick="closeInput('editForm')" aria-label="Close">&#10006;</a>
+            <input type="submit" value="Save" class="light-button">
+            <a onclick="closeInput('editForm')" aria-label="Close" class="light-button">&#10006;</a>
         </form>
     </div>
 
@@ -35,8 +38,8 @@
             <input type="hidden" id="edit-id-user">
             <input type="text" id="edit-name-user" placeholder="name">
             <input type="password" id="edit-password" placeholder="password" >
-            <input type="submit" value="Save">
-            <a onclick="closeInput('editFormthisUser')" aria-label="Close">&#10006;</a>
+            <input type="submit" value="Save" class="light-button">
+            <a onclick="closeInput('editFormthisUser')" aria-label="Close" >&#10006;</a>
         </form>
     </div>
 
@@ -52,7 +55,7 @@
         <tbody id="Tasks"></tbody>
     </table>
 
-    <button onclick="showUpdateThisUser()">update your details</button>
+    <button onclick="showUpdateThisUser()" class="black-button  button-update">update your details</button>
     <div id="link-to-users"></div>
 
     <script src="js/script.js" asp-append-version="true"></script>
