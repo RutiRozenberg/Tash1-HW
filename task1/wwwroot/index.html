@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo list - login</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/login.css" />
+
 </head>
 <body>
-    <form action="javascript:void(0);" id="formLogIn" method="POST" onsubmit="Login()">
-        <div>
+    <div class="login">
+        <h1>Login</h1>
+        <form action="javascript:void(0);" id="formLogIn" method="POST" onsubmit="Login()">
             <label>name</label>
             <input type="text" required id="name"/>
-        </div>
-        <div>
             <label>password</label>
             <input type="password" required id="password"/>
-        </div>
-        <button type="submit" >login</button>
-    </form>
+            <button type="submit" >login</button>
+        </form>
+    </div>
+    
+    <script src="./js/script.js"></script>
     <script src="./js/login.js"></script>
 </body>
 

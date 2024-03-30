@@ -2,9 +2,8 @@ const uri = '/Task';
 let tasks = [];
 
 
-
-// getItems(uri,'Tasks');
 linkToUsers()
+showUserName()
 
 const addNameTextbox = document.getElementById('add-name');
 
@@ -132,7 +131,6 @@ function showUpdateThisUser(){
         .then(response => response.json())
         .then(data => writeDetailsinInputs(data,"editFormthisUser" ))
         .catch(error => {
-            // location.href="index.html";
             console.log('Unable to get items.', error)
         });
 }
@@ -152,7 +150,7 @@ function updateThisUser(){
 
     fetch( `user/Get`, requestOptions)
         .then(response => response.json())
-        .then(data =>ifIsADmin=data.isAdmin )
+        .then(data =>ifIsADmin = data.isAdmin )
         .catch(error => {
             console.log('Unable to get items.', error)
         });
@@ -178,9 +176,29 @@ function updateThisUser(){
     });   
 }
 
-
-
-
-
+function showUserName(){
+    const h1Name = document.getElementById('h1-name');
+    var myHeaders = headerWithtoken()
     
-   
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    }; 
+
+    fetch( `user/Get`, requestOptions)
+        .then(response => response.json())
+        .then(data =>h1Name.innerHTML+=' '+data.name)
+        .catch(error => {
+            console.log('Unable to get items.', error)
+        });
+} 
+
+
+
+
+function signOut(){
+    localStorage.setItem("token","")
+    location.href="index.html" 
+}
+

@@ -43,7 +43,7 @@ function displayEditFormUser(id ) {
 
 
 function _displayCount(itemCount) {
-    const name = (itemCount === 1) ? 'task' : 'task kinds';
+    const name = (itemCount === 1) ? 'user' : 'users kinds';
 
     document.getElementById('counter').innerText = `${itemCount} ${name}`;
 }

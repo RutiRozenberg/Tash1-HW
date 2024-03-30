@@ -1,5 +1,6 @@
 
 const url = '/login';
+ExistValidToken()
 
 function Login() {
     localStorage.clear();
@@ -27,14 +28,36 @@ function Login() {
                 password.value = "";
                 alert("not exist!!")
             } else {
-                token = result;
+                const token = result;
                 localStorage.setItem("token",token)
                 location.href = "Tasks.html";
             }
-        }).catch((error) => alert("error", error));
-
-
-        // document.getElementById('btn-google-connect').addEventListener('click', function() {
-        //     window.location.href = 'https://localhost:5200/';
-        // });
+        })
+        .catch((error) => console.log("error", error));
 }
+
+
+
+function ExistValidToken(){
+    const exist=true
+
+    var myHeaders = headerWithtoken()
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+
+        
+    fetch( '/Task', requestOptions)
+        .then(response=>response.json())
+        .then(data=> {
+            if(data){
+                location.href="Tasks.html"
+            }
+        })
+        .catch(error => {
+            console.log('Unable to get items. token not available')
+        });
+}
+
