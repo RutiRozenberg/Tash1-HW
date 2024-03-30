@@ -13,23 +13,27 @@ button,
 
 table {
     font-family: Arial, sans-serif;
-    border: 1px solid;
     border-collapse: collapse;
 }
 
-
+h3{
+    color: rgb(0, 100, 154);
+}
+tr{
+    border: none;
+}
 th {
     padding: 5px;
-    background-color: rgb(255, 239, 219);
+    background-color: rgb(175 234 255);
+    color: rgb(0, 100, 154);
 }
 
 td {
-    border: 1px solid;
     padding: 5px;
 }
 
 td button{
-    background-color: rgb(255, 239, 219);
+    background-color: rgb(175 234 255);
     border:   rgb(0, 100, 154)  solid 1px;
     border-radius: 3px;
     padding: 2px 5px ;
@@ -53,7 +57,7 @@ header{
     align-items: center;
     width: 100%;
     justify-content: space-around;
-    background-color: rgb(255, 239, 219);
+    background-color: rgb(175 234 255);
 }
 
 #title-name{
@@ -63,12 +67,12 @@ header{
 }
 
 .button-update{
-    margin: 20px;
+    margin: 50px;
 }
 
 
 .light-button{
-    background-color: rgb(255, 239, 219);
+    background-color: rgb(175 234 255);
     border:   rgb(0, 100, 154)  solid 1px;
     border-radius: 3px;
     padding: 2px 5px ;
@@ -76,3 +80,6 @@ header{
 
 }
 
+a{
+    margin-top: 50px;
+}
