@@ -58,4 +58,3 @@ function ExistValidToken(){
             console.log('Unable to get items. token not available')
         });
 }
-

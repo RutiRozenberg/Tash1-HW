@@ -1,11 +1,9 @@
+
 const uri = '/Task';
 let tasks = [];
-
-
-linkToUsers()
-
 const addNameTextbox = document.getElementById('add-name');
 
+linkToUsers()
 
 function addTask(){
     const item = {
@@ -18,9 +16,9 @@ function addTask(){
 
 function _displayCount(itemCount) {
     const name = (itemCount === 1) ? 'task' : 'task kinds';
-
     document.getElementById('counter').innerText = `${itemCount} ${name}`;
 }
+
 
 function updateTask(){
     const itemId = document.getElementById('edit-id').value;
@@ -34,13 +32,9 @@ function updateTask(){
 }
 
 
-
 function displayEditFormTask(id) {
     
     const item = tasks.find(item => item.id === id);
-    console.log(id);
-
-    console.log(item);
     document.getElementById('edit-name').value = item.name;
     document.getElementById('edit-id').value = item.id;
     document.getElementById('edit-isDone').checked = item.isDone;
@@ -50,12 +44,10 @@ function displayEditFormTask(id) {
 
 
 function _displayItems(data,id) {
-    console.log(data);
     const tBody = document.getElementById(id);
     tBody.innerHTML = '';
 
     _displayCount(data.length);
-
 
     const button = document.createElement('button');
 
@@ -88,7 +80,6 @@ function _displayItems(data,id) {
         let td4 = tr.insertCell(3);
         td4.appendChild(deleteButton);
 
-
         tasks=data;
     });
 }
@@ -100,7 +91,6 @@ function linkToUsers(){
     link.href = "./users.html";
     link.innerHTML="link to users"
 
-
     const myHeaders = headerWithtoken();
 
     var requestOptions = {
@@ -108,7 +98,6 @@ function linkToUsers(){
         headers: myHeaders,
         redirect: 'follow'
     };
-
 
     fetch("/user", requestOptions)
         .then(response => response.json())
@@ -119,11 +108,13 @@ function linkToUsers(){
 
 function showUpdateThisUser(){
     var myHeaders = headerWithtoken()
+
     var requestOptions = {
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow'
     };
+
     fetch( `user/Get`, requestOptions)
         .then(response => response.json())
         .then(data => writeDetailsinInputs(data,"editFormthisUser" ))
@@ -134,9 +125,7 @@ function showUpdateThisUser(){
 
 
 function updateThisUser(){ 
-
     const ifIsADmin = false;
-
     var myHeaders = headerWithtoken()
 
     var requestOptions = {
@@ -172,4 +161,3 @@ function updateThisUser(){
         console.error('Unable to update item.', error)
     });   
 }
-

@@ -1,5 +1,4 @@
 
-
 const token=localStorage.getItem("token")
 
 showUserName()
@@ -7,7 +6,6 @@ showUserName()
 function headerWithtoken()
 {
     var myHeaders = new Headers();
-
     myHeaders.append("Authorization", "Bearer " + token);
     myHeaders.append("Content-Type", "application/json");
     return myHeaders;
@@ -25,16 +23,14 @@ function getItems(url,type) {
         .then(response => response.json())
         .then(data => _displayItems(data,type))
         .catch(error => {
-                location.href="index.html";
+            location.href="index.html";
             console.log('Unable to get items.', error)
         });
 }
 
 
 function addItem(url,type,itemToAdd) {
-   
-
-    
+  
     let myHeaders = headerWithtoken()
 
     fetch(url, {
@@ -54,6 +50,7 @@ function addItem(url,type,itemToAdd) {
         });
 }
 
+
 function deleteItem(url,id,type) {
     let myHeaders =headerWithtoken();
     fetch(`${url}/${id}`, {
@@ -66,15 +63,13 @@ function deleteItem(url,id,type) {
 }
 
 
-
-
 function closeInput(formId) {
     document.getElementById(formId).style.display = 'none';
 }
 
 
 function updateItem(url,type,itemId , item) {
-  
+    
     myHeaders = headerWithtoken()
     fetch(`${url}/${itemId}`, {
             method: 'PUT',
@@ -93,6 +88,7 @@ function updateItem(url,type,itemId , item) {
 
     return false;
 }
+
 
 function writeDetailsinInputs(item , formId){
     document.getElementById('edit-name-user').value = item.name;
@@ -126,10 +122,8 @@ function showUserName(){
         });
 } 
 
+
 function signOut(){
     localStorage.setItem("token","")
     location.href="index.html" 
 }
-
-
-

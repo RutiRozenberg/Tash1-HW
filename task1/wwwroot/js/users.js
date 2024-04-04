@@ -4,7 +4,6 @@ let users = []
 const addNameTextbox = document.getElementById('add-name');
 const addPasswordTextbox = document.getElementById('add-password');
 
- 
 function addUser(){
     const addIsAdmin = document.getElementById('add-isAdmin').checked;
     document.getElementById('add-isAdmin').checked=false;
@@ -14,9 +13,9 @@ function addUser(){
         name: addNameTextbox.value.trim(),
         password: addPasswordTextbox.value.trim(),
     };
-    console.log("item:  " ,item);
     addItem(uri,'Users',item)
 }
+
 
 function updateUser(){
     const itemId = document.getElementById('edit-id-user').value;
@@ -36,20 +35,15 @@ function displayEditFormUser(id ) {
 }
 
 
-
-
 function _displayCount(itemCount) {
     const name = (itemCount === 1) ? 'user' : 'users kinds';
-
     document.getElementById('counter').innerText = `${itemCount} ${name}`;
 }
 
 function _displayItems(data,id) {
-    console.log(data);
     const tBody = document.getElementById(id);
     tBody.innerHTML = '';
 
-    console.log("data ", data)
     _displayCount(data.length);
 
     const button = document.createElement('button');
