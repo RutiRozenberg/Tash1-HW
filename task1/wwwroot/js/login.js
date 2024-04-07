@@ -3,11 +3,17 @@ const url = '/login';
 
 ExistValidToken()
 
-async function Login() {
-    localStorage.clear();
-    var header = new Headers();
+
+function getUserDetails(){
     const name = document.getElementById('name').value.trim();
     const password = document.getElementById('password').value.trim();
+    Login(name,password)
+}
+
+
+async function Login(name,password) {
+    localStorage.clear();
+    const header = new Headers();
 
     header.append("Content-Type", "application/json");
     const forBody = JSON.stringify({
@@ -40,8 +46,8 @@ async function Login() {
 
 function ExistValidToken(){
 
-    var myHeaders = headerWithtoken()
-    var requestOptions = {
+    const myHeaders = headerWithtoken()
+    const requestOptions = {
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow'
@@ -57,4 +63,31 @@ function ExistValidToken(){
         .catch(error => {
             console.log('Unable to get items. token not available')
         });
+}
+
+
+
+function handleCredentialResponse(response) {
+    if (response.credential) {
+        const idToken = response.credential;
+        const decodedToken = parseJwt(idToken);
+        // var userId = decodedToken.sub;
+        const userPassword =decodedToken.email;
+        const userName = decodedToken.name;
+        console.log(userPassword , "  ", userName);
+        Login(userName, userPassword);
+    } else {
+        console.log('Google Sign-In was cancelled.');
+    }
+}
+
+function parseJwt(token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+
 }

@@ -13,7 +13,7 @@
 <body>
     <div class="login">
         <h1>Login</h1>
-        <form action="javascript:void(0);" id="formLogIn" method="POST" onsubmit="Login()">
+        <form action="javascript:void(0);" id="formLogIn" method="POST" onsubmit="getUserDetails()">
             <label>name</label>
             <input type="text" required id="name" />
             <label>password</label>
@@ -26,9 +26,19 @@
         href="https://bold-firefly-200713.postman.co/collection/34004535-ae22d0dc-5c6c-4f55-92bd-5c8ef04ddd3f?source=rip_html">
         <img alt="Run in Postman" src="https://run.pstmn.io/button.svg">
     </a>
-    
+
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <meta id="g_id_onload" data-client_id="101502589-6gf0q3aia5f9jevc7figlrasl6qo7nqa.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse">
+    </meta>
+    <div class="g_id_signin" data-type="standard"></div>
+
+
+
     <script src="./js/script.js"></script>
     <script src="./js/login.js"></script>
+
 </body>
 
 
