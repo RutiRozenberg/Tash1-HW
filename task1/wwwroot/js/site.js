@@ -93,7 +93,7 @@ function linkToUsers(){
 
     const myHeaders = headerWithtoken();
 
-    var requestOptions = {
+    const requestOptions = {
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow'
@@ -107,9 +107,9 @@ function linkToUsers(){
 
 
 function showUpdateThisUser(){
-    var myHeaders = headerWithtoken()
+    const myHeaders = headerWithtoken()
 
-    var requestOptions = {
+    const requestOptions = {
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow'
@@ -126,9 +126,9 @@ function showUpdateThisUser(){
 
 function updateThisUser(){ 
     const ifIsADmin = false;
-    var myHeaders = headerWithtoken()
+    const myHeaders = headerWithtoken()
 
-    var requestOptions = {
+    const requestOptions = {
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow'

@@ -5,7 +5,7 @@ showUserName()
 
 function headerWithtoken()
 {
-    var myHeaders = new Headers();
+    const myHeaders = new Headers();
     myHeaders.append("Authorization", "Bearer " + token);
     myHeaders.append("Content-Type", "application/json");
     return myHeaders;
@@ -13,8 +13,8 @@ function headerWithtoken()
 
 
 function getItems(url,type) {
-    var myHeaders = headerWithtoken()
-    var requestOptions = {
+    const myHeaders = headerWithtoken()
+    const requestOptions = {
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow'
@@ -106,9 +106,9 @@ function writeDetailsinInputs(item , formId){
 
 function showUserName(){
     const h1Name = document.getElementById('title-name');
-    var myHeaders = headerWithtoken()
+    const myHeaders = headerWithtoken()
     
-    var requestOptions = {
+    const requestOptions = {
         method: 'GET',
         headers: myHeaders,
         redirect: 'follow'
